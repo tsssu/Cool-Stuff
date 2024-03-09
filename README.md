@@ -27,6 +27,7 @@ Terus nanti tinggal taruh di PATH biar nanti penggunaannya bisa tinggal `pawncc`
 ### Konfigurasi .vscode versi aku
 <details>
 	<summary>Untuk yang pakai PowerShell.exe</summary>
+
 	```json
 	{
 	  "version": "2.0.0",
@@ -68,6 +69,7 @@ Terus nanti tinggal taruh di PATH biar nanti penggunaannya bisa tinggal `pawncc`
 
 <details>
 	<summary>Kalau yang vscode nya pakai cmd.exe</summary>
+
 	```json
 	{
 	  "version": "2.0.0",
@@ -113,6 +115,7 @@ path buat ke compiler nya, jadi ya ini dia:
 
 <details>
 	<summary>Config Pawn.sublime-build</summary>
+	
 	```json
 	{
 		"working_dir": "C:/Program Files (x86)/Pawn Compiler", 
