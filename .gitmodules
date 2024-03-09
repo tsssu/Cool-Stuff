@@ -1,0 +1,6 @@
+[submodule "omp-stdlib"]
+	path = libraries/omp-stdlib
+	url = https://github.com/openmultiplayer/omp-stdlib.git
+[submodule "YSI-Includes"]
+	path = libraries/YSI-Includes
+	url = https://github.com/pawn-lang/YSI-Includes.git

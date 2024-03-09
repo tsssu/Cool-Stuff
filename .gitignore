@@ -1,0 +1,23 @@
+
+# AMX stuff
+server/gamemodes/*.amx
+server/gamemodes/*.asm
+
+# Server Binaries
+server/*.dll
+server/*.so
+server/components/*.dll
+server/components/*.so
+server/plugins/*.dll
+server/plugins/*.so
+
+# Server Logging
+server/*.txt
+server/logs
+
+# YSI Caches
+server/scriptfiles/*.amx
+server/YSI
+
+# Database Cache
+server/scriptfiles/*.db
