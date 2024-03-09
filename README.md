@@ -26,86 +26,90 @@ Terus nanti tinggal taruh di PATH biar nanti penggunaannya bisa tinggal `pawncc`
 
 ### Konfigurasi .vscode versi aku
 <details>
-	<summary>Untuk yang pakai PowerShell.exe</summary>
-
-	```json
+    <summary>Untuk yang pakai PowerShell.exe</summary>
+	
+Masukkan config ini kedalam `.vscode/tasks.json` ya!
+ 
+```json
+{
+  "version": "2.0.0",
+  "tasks": [
 	{
-	  "version": "2.0.0",
-	  "tasks": [
-		{
-		  "label": "build-normal",
-		  "type": "shell",
-		  "command": "pawncc",
-		  "args": [
-			"${file}", 
-			"--%", 
-			"-o${workspaceRoot}/server/gamemodes/output.amx",
-			"-i${workspaceRoot}/libraries/legacy-include",
-			"-i${workspaceRoot}/libraries/omp-stdlib",
-			"-i${workspaceRoot}/libraries/YSI-Includes",
-			"-i${workspaceRoot}/libraries/YSI-Includes/amx",
-			"-i${workspaceRoot}/libraries/YSI-Includes/code-parse",
-			"-i${workspaceRoot}/libraries/YSI-Includes/indirection",
-			"-i${workspaceRoot}/libraries/YSI-Includes/md-sort",
-			"-;+", 
-			"-(+", 
-			"-d3"
-		  ],
-		  "group": {
-			"kind": "build",
-			"isDefault": true
-		  },
-		  "isBackground": false,
-		  "presentation": {
-			"reveal": "silent",
-			"panel": "dedicated"
-		  },
-		  "problemMatcher": "$pawncc"
-		}
-	  ]
+	  "label": "build-normal",
+	  "type": "shell",
+	  "command": "pawncc",
+	  "args": [
+		"${file}", 
+		"--%", 
+		"-o${workspaceRoot}/server/gamemodes/output.amx",
+		"-i${workspaceRoot}/libraries/legacy-include",
+		"-i${workspaceRoot}/libraries/omp-stdlib",
+		"-i${workspaceRoot}/libraries/YSI-Includes",
+		"-i${workspaceRoot}/libraries/YSI-Includes/amx",
+		"-i${workspaceRoot}/libraries/YSI-Includes/code-parse",
+		"-i${workspaceRoot}/libraries/YSI-Includes/indirection",
+		"-i${workspaceRoot}/libraries/YSI-Includes/md-sort",
+		"-;+", 
+		"-(+", 
+		"-d3"
+	  ],
+	  "group": {
+		"kind": "build",
+		"isDefault": true
+	  },
+	  "isBackground": false,
+	  "presentation": {
+		"reveal": "silent",
+		"panel": "dedicated"
+	  },
+	  "problemMatcher": "$pawncc"
 	}
-	```
+  ]
+}
+```
 </details>
 
 <details>
 	<summary>Kalau yang vscode nya pakai cmd.exe</summary>
+	
+Masukkan config ini kedalam `.vscode/tasks.json` ya!
 
-	```json
+```json
+{
+  "version": "2.0.0",
+  "tasks": [
 	{
-	  "version": "2.0.0",
-	  "tasks": [
-		{
-		  "label": "build-normal",
-		  "type": "shell",
-		  "command": "pawncc",
-		  "args": [
-			"${file}", 
-			"-o${workspaceRoot}/server/gamemodes/output.amx",
-			"-i${workspaceRoot}/libraries/legacy-include",
-			"-i${workspaceRoot}/libraries/omp-stdlib",
-			"-i${workspaceRoot}/libraries/YSI-Includes",
-			"-i${workspaceRoot}/libraries/YSI-Includes/amx",
-			"-i${workspaceRoot}/libraries/YSI-Includes/code-parse",
-			"-i${workspaceRoot}/libraries/YSI-Includes/indirection",
-			"-i${workspaceRoot}/libraries/YSI-Includes/md-sort",
-			"-;+", 
-			"-(+", 
-			"-d3"
-		  ],
-		  "group": {
-			"kind": "build",
-			"isDefault": true
-		  },
-		  "isBackground": false,
-		  "presentation": {
-			"reveal": "silent",
-			"panel": "dedicated"
-		  },
-		  "problemMatcher": "$pawncc"
-		}
-	  ]
+	  "label": "build-normal",
+	  "type": "shell",
+	  "command": "pawncc",
+	  "args": [
+		"${file}", 
+		"-o${workspaceRoot}/server/gamemodes/output.amx",
+		"-i${workspaceRoot}/libraries/legacy-include",
+		"-i${workspaceRoot}/libraries/omp-stdlib",
+		"-i${workspaceRoot}/libraries/YSI-Includes",
+		"-i${workspaceRoot}/libraries/YSI-Includes/amx",
+		"-i${workspaceRoot}/libraries/YSI-Includes/code-parse",
+		"-i${workspaceRoot}/libraries/YSI-Includes/indirection",
+		"-i${workspaceRoot}/libraries/YSI-Includes/md-sort",
+		"-;+", 
+		"-(+", 
+		"-d3"
+	  ],
+	  "group": {
+		"kind": "build",
+		"isDefault": true
+	  },
+	  "isBackground": false,
+	  "presentation": {
+		"reveal": "silent",
+		"panel": "dedicated"
+	  },
+	  "problemMatcher": "$pawncc"
 	}
-	```
+  ]
+}
+```
 </details>
 
 ### Konfigurasi Pawn.sublime-build versi aku.
@@ -116,26 +120,28 @@ path buat ke compiler nya, jadi ya ini dia:
 <details>
 	<summary>Config Pawn.sublime-build</summary>
 	
-	```json
-	{
-		"working_dir": "C:/Program Files (x86)/Pawn Compiler", 
-		"selector": "source.pwn", 
-		"cmd": [
-			"pawncc.exe", 
-			"$file", 
-			"-o$file_path/../server/gamemodes/$file_base_name.amx",
-			"-i$file_path/../libraries/omp-stdlib",
-			"-i$file_path/../libraries/legacy-include",
-			"-i$file_path/../libraries/YSI-Includes",
-			"-i$file_path/../libraries/YSI-Includes/amx",
-			"-i$file_path/../libraries/YSI-Includes/indirection",
-			"-i$file_path/../libraries/YSI-Includes/code-parse",
-			"-i$file_path/../libraries/YSI-Includes/md-sort",
-			"-;+", 
-			"-(+", 
-			"-d3"
-		], 
-		"file_regex": "(.*?)\\(([0-9]*)[- 0-9]*\\)"
-	}
-	```
+Masukkan config ini kedalam `%AppData%\Sublime Text\Packages\User` ya!
+
+```json
+{
+	"working_dir": "C:/Program Files (x86)/Pawn Compiler", 
+	"selector": "source.pwn", 
+	"cmd": [
+		"pawncc.exe", 
+		"$file", 
+		"-o$file_path/../server/gamemodes/$file_base_name.amx",
+		"-i$file_path/../libraries/omp-stdlib",
+		"-i$file_path/../libraries/legacy-include",
+		"-i$file_path/../libraries/YSI-Includes",
+		"-i$file_path/../libraries/YSI-Includes/amx",
+		"-i$file_path/../libraries/YSI-Includes/indirection",
+		"-i$file_path/../libraries/YSI-Includes/code-parse",
+		"-i$file_path/../libraries/YSI-Includes/md-sort",
+		"-;+", 
+		"-(+", 
+		"-d3"
+	], 
+	"file_regex": "(.*?)\\(([0-9]*)[- 0-9]*\\)"
+}
+```
 </details>
